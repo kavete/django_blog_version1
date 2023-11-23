@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main_assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'main_assets/css/main_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'main_assets/css/prism.css' %}">
+
+</head>
+<body>
+{% include 'partials/header.html' %}
+{% block content %}
+
+{% endblock %}
+
+{% include 'partials/footer.html' %}
+
+<script src="https://kit.fontawesome.com/2f92acd9b1.js" crossorigin="anonymous"></script>
+<script src="{% static 'main_assets/js/bootstrap.bundle.js' %}">
+
+</script>
+
+<script src="{% static 'main_assets/js/prism.js' %}">
+</script>
+
+{% block scripts %}
+	
+{% endblock %}
+</body>
+</html>

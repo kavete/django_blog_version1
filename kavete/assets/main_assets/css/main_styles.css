@@ -1,0 +1,93 @@
+body {
+    background-color: #212529;
+    color: #fff;
+}
+
+.card {
+    color: #000;
+}
+
+.header {
+    background-color: #343a40;
+}
+
+.header .nav-link {
+    color: #fff;
+}
+
+.header .nav-link:hover {
+    color: #ffc107;
+}
+
+.post-title {
+    color: #fff;
+}
+
+.post-meta {
+    color: #6c757d;
+}
+
+.post-content {
+    color: #fff;
+}
+
+.post-content a {
+    color: #ffc107;
+}
+
+.post-content a:hover {
+    color: #fff;
+}
+
+.sidebar-title {
+    color: #fff;
+}
+
+.sidebar-link {
+    color: #fff;
+}
+
+.sidebar-link:hover {
+    color: #ffc107;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+a {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+.fa-facebook {
+    color: darkblue;
+    font-size: 2em;
+}
+
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #007bff !important;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

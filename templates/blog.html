@@ -1,0 +1,89 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="post-title">{{ blog_post.title }}</h1>
+                <p class="post-meta">Written by <a href="#"
+                                                   class="text-decoration-none text-light">{{ blog_post.author.user.first_name }} {{ blog_post.author.user.last_name }}</a>
+                </p>
+                <hr>
+                <p class="post-meta">Posted {{ blog_post.date_published | naturaltime }}</p>
+                <hr>
+                {% if blog_post.preview_image %}
+                    <img src="{{ blog_post.preview_image.url }}" alt="Blog Post Image" class="img-fluid">
+                {% endif %}
+                <div class="post-content">
+                    {{ blog_post.content | safe }}
+                </div>
+
+            </div>
+            <div class="col-md-4">
+
+                <div class="sidebar">
+                {% if related_posts %}
+                    <h3 class="sidebar-title">Recommended</h3>
+                    {# TODO - Add recommended posts #}
+
+                    {% for related_post in related_posts %}
+                        <a href="{{ related_post.preview_image.url }}" class="sidebar-link">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="{{ related_post.preview_image.url }}" alt="Blog Post Image"
+                                         class="img-fluid" style="maximum-width: 400px">
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="sidebar-title">{{ related_post.title }}</p>
+                                    <p class="sidebar-meta">{{ related_post.date_published | naturaltime }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+{% endif %}
+
+                </div>
+                <div class="sidebar">
+                    <h3 class="sidebar-title">Tags</h3>
+                    <ul class="list-unstyled">
+                        {% for tag in blog_post.tags.all %}
+                            <li><a href="#" class="sidebar-link">{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="sidebar">
+                    <h3 class="sidebar-title">Random</h3>
+                    <ul class="list-unstyled">
+                        {% for random_post in random_posts %}
+                            <li><a href="random_post" class="sidebar-link">{{ random_post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        // Get all <pre> elements in the document
+        let preElements = document.getElementsByTagName('pre');
+
+        // Loop through each <pre> element
+        for (let i = 0; i < preElements.length; i++) {
+            // Get the first child element of the current <pre> element
+            let firstChild = preElements[i].firstElementChild;
+
+            // Check if there is a first child element
+            if (firstChild) {
+                // Add the 'highlight' class to the first child element
+                firstChild.classList.add('language-c');
+            }
+        }
+    </script>
+{% endblock %}

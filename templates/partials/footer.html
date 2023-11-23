@@ -1,0 +1,56 @@
+<footer class="p-3 footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>About</h4>
+                <p>This website was created with an aim to document my learning progress and share what I learn with
+                    other people.The major topics include Arduino and some written art. Some articles about technology
+                    and electronics in general are also included.
+                    Though, initially designed for personal use, I included an option for some of my friends to also
+                    share what they learn on the website.
+                    I hope these journeys help you in some way.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>Tags</h4>
+                <ul class="list-unstyled">
+
+                    {% for tag in all_tags %}
+                        {% if request.path == '/' %}
+                            <li><a href="tags/{{ tag }}">#{{ tag }}</a></li>
+                            {#                    <li><a href="#">Arduino</a></li>#}
+                            {#                    <li><a href="#">Linux</a></li>#}
+                            {#                    <li><a href="#">Written art</a></li>#}
+                            {#                    <li><a href="#">Electronics</a></li>#}
+                        {% elif request.path == 'tags/' %}
+                            <li><a href="{{ tag }}">#{{ tag }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Follow us on</h4>
+                <ul class="list-unstyled">
+                    <li class="align-items-center"><i class="fab fa-facebook me-1"></i><a href="#">Facebook</a></li>
+                    {#                    <li><i class="fab fa-twitter me-1"></i><a href="#">Twitter</a></li>#}
+                    {#                    <li><i class="fab fa-instagram me-1"></i><a href="#">Instagram</a></li>#}
+                    {#                    <li><i class="fab fa-linkedin me-1"></i><a href="#">LinkedIn</a></li>#}
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <span class="text-muted">© 2023 Kavete. All rights reserved.</span>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    <li class="list-inline-item">|</li>
+                    <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                    <li class="list-inline-item">|</li>
+                    <li class="list-inline-item"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

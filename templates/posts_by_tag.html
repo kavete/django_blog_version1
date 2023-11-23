@@ -1,0 +1,66 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block title %}
+    {{ tag }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4 mb-4">
+        <div class="row align-items-stretch">
+                {% for post in post_with_tag %}
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card mb-4 h-100">
+                            {% if post.preview_image %}
+                                <img src="{{ post.preview_image.url }}" alt="Blog Post Image" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="{{ post.author.avatar.url }}" alt="Author Avatar" class="rounded-circle me-2"
+                                         style="width: 40px; height: 40px;">
+                                    <div>
+                                        <h6 class="m-0 text-black">
+                                            By {{ post.author.user.first_name }} {{ post.author.user.last_name }}</h6>
+                                        <p class="text-muted m-0">Published {{ post.date_published | naturaltime }}</p>
+                                    </div>
+                                </div>
+                                <h3 class="card-title">{{ post.title }}</h3>
+                                <p class="card-text">
+                                    {{ post.content | truncatewords:30 | safe }}
+                                </p>
+                                <a href="{{ post.id }}" class="btn btn-warning">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if post_with_tag.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href='?page={{ post_with_tag.previous_page_number }}'>&laquo; Previous</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href='#' tabindex="-1" aria-disabled="True">Previous</a>
+                </li>
+            {% endif %}
+
+            <li class="page-item">
+                <a href="#" class="page-link">{{ post_with_tag.number }}</a>
+            </li>
+
+
+            {% if post_with_tag.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href='?page={{ post_with_tag.next_page_number }}'>Next &raquo;</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href='' tabindex="-1" aria-disabled="True">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

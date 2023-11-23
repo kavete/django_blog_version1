@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+	Page Not Found
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+    <div class="row">
+        <p class="display-1">404</p>
+        <p>The page you are looking for could not be found!</p>
+        <p><a href="{% url 'home' %}" class="btn btn-primary">Home</a> </p>
+    </div>
+    </div>
+{% endblock %}

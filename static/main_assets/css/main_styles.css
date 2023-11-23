@@ -1,0 +1,72 @@
+body {
+    background-color: #212529;
+    color: #fff;
+}
+.card {
+    color: #000;
+}
+.header {
+    background-color: #343a40;
+}
+
+.header .nav-link {
+    color: #fff;
+}
+
+.header .nav-link:hover {
+    color: #ffc107;
+}
+
+.post-title {
+    color: #fff;
+}
+
+.post-meta {
+    color: #6c757d;
+}
+
+.post-content {
+    color: #fff;
+}
+
+.post-content a {
+    color: #ffc107;
+}
+
+.post-content a:hover {
+    color: #fff;
+}
+
+.sidebar-title {
+    color: #fff;
+}
+
+.sidebar-link {
+    color: #fff;
+}
+
+.sidebar-link:hover {
+    color: #ffc107;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+a {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+.fa-facebook {
+    color: blue;
+    font-size: 2em;
+}
+
+

@@ -1,0 +1,57 @@
+<header class="p-3 header">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="{% url 'home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <i class="fas fa-code fa-2x me-2"></i>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2">Home</a></li>
+                <li><a href="#" class="nav-link px-2">About</a></li>
+                <li><a href="#" class="nav-link px-2">Contact</a></li>
+                <li><a href="#" class="nav-link px-2">Categories</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" method="get"
+                  action="{% url 'search' %}">
+                <div class="input-group">
+                    <input type="search" name="search_word" class="form-control form-control-dark"
+                           placeholder="Search...">
+                    <a href="{% url 'search' %}" class="input-group-text text-decoration-none text-dark">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </form>
+            <div class="text-end">
+                {#                <button type="button" class="btn btn-outline-light me-2">Login</button>#}
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#subscriptionModal">Subscribe
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-black">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscriptionModalLabel">Subscribe to Our Newsletter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
