@@ -4,3 +4,4 @@ static/**/*.css linguist-vendored=true linguist-generated=true
 **/*.js linguist-vendored=true
 
 **/*.css linguist-vendored=true
+**/*.html linguist-vendored=true
